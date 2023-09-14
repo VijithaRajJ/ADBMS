@@ -1,0 +1,38 @@
+ create table student(Roll_no int , Sname varchar(30), S_address varchar(30), constraint stu primary key(Roll_no));
+Query OK, 0 rows affected (0.09 sec)
+
+insert into student (Roll_no , Sname , S_address) values(1,'Rahul','Pattom');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student (Roll_no , Sname , S_address) values(2,'Sachin','Ambala mukku');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student (Roll_no , Sname , S_address) values(3,'Sourav','nalanchira');
+Query OK, 1 row affected (0.04 sec)
+
+create table marksheet(Rollno int , sub1 int , sub2 int , sub3 int , constraint mark foreign key(Rollno) references student(Roll_no));
+Query OK, 0 rows affected (0.14 sec)
+
+
+mysql> insert into marksheet(Rollno , sub1 , sub2 , sub3) values(1,78,30,45);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into marksheet(Rollno , sub1 , sub2 , sub3) values(2,45,65,50);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into marksheet(Rollno , sub1 , sub2 , sub3) values(3,60,87,33);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select *from student;
++---------+--------+--------------+
+| Roll_no | Sname  | S_address    |
++---------+--------+--------------+
+|       1 | Rahul  | Pattom       |
+|       2 | Sachin | Ambala mukku |
+|       3 | Sourav | nalanchira   |
++---------+--------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from marksheet;
++--------+------+------+------+
+| Rollno | s
